@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Page with Pagination</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    /* Header Styles */
+    header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    header .dropdown {
+      margin-left: 10px;
+      position: relative;
+    }
+
+    header .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    header .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    header .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    header .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Pagination Styles */
+    .pagination {
+      text-align: center;
+      position: fixed;
+      bottom: 100px; /* Increased gap */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    .pagination a {
+      color: #333;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .pagination a:hover {
+      background-color: #ddd;
+    }
+
+    .pagination .active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Animation */
+    @keyframes moveAround {
+      0%, 100% {
+        transform: translateX(-90%) translateY(-90%);
+        background-color: #ff0000;
+      }
+      25% {
+        transform: translateX(90%) translateY(-90%);
+        background-color: #00ff00;
+      }
+      50% {
+        transform: translateX(90%) translateY(90%);
+        background-color: #0000ff;
+      }
+      75% {
+        transform: translateX(-90%) translateY(90%);
+        background-color: #ffff00;
+      }
+    }
+
+    .animated {
+      animation: moveAround 10s ease infinite; /* Slower animation */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Logo.jpg" alt="Logo">
+  <div class="dropdown">
+    <span>Home</span>
+    <div class="dropdown-content">
+      <a href="#">About Me</a>
+      <a href="#">Social Media</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<div class="container animated">
+  <h1>Assalamualaikum! Welcome to my page</h1>
+</div>
+
+<div class="pagination">
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+</div>
+
+<footer>
+  <p>&copy; Copywrite By Fahim.</p>
+</footer>
+
+</body>
+</html>
